@@ -1,9 +1,12 @@
 const sql=require('mssql');
 const dbconfig=require('./../config/db.config');
-const fetch=require('node-fetch');
+const procedureApi=require('./../config/api');
+const requestClient=require("request");
+const credentials=require('./../config/keys');
 
 var userService=(()=>{
     const request=new sql.Request();
+
    
 
     async function userActivities(){
@@ -49,20 +52,33 @@ var userService=(()=>{
         })
     }
 
-    // async function procedures(url){
-    //     console.log('url',url)
-    //     return fetch(url,{
-    //         method: 'GET',
-    //         headers:{
-    //             "DCUBE-API-KEY":"25C3661923A529B2D7AD9D88D557FFA5"
-    //         }
-    //     });
-    // }
-    
+    async function proceduresName(){
+        return new Promise((resolve,reject)=>{
+            requestClient.get({
+                url: 'https://emapi.alithias.com:8000/procedures/',
+                headers: { 
+                    'DCUBE-API-KEY': '25C3661923A529B2D7AD9D88D557FFA5'
+                },
+                method: 'GET',
+                rejectUnauthorized: false,},
+               function (error, response, body) {
+                    console.log(body,"body");
+                    resolve(body)
+               })
+        }) 
+    }
+
+   
+
+   
+
+ 
+
 
     return {
         userActivities:userActivities,
-        procedureList:procedureList
+        procedureList:procedureList,
+        proceduresName:proceduresName
        
     }
 

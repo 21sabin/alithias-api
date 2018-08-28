@@ -1,6 +1,9 @@
 const userService=require('../service/userService');
 const router=require('express').Router();
 
+router.get('/names',(req,res)=>{
+  userService.proceduresName().then(data=>console.log(data,"names"))
+ });
 
 router.post('/',(req,res)=>{
    userService.procedureList(req.body).then(recordset=>{
@@ -11,6 +14,7 @@ router.post('/',(req,res)=>{
        
    })
 });
+
 
 module.exports=router;
 
