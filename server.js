@@ -1,7 +1,10 @@
 const express=require("express");
 const dbconfig=require("./config/db.config");
 const bodyParser=require('body-parser');
+let cors = require('cors')
 var app=express();
+
+app.use(cors());
 
 // const { connection ,request } =require('./connection/db.connection');
 app.use(bodyParser.json());

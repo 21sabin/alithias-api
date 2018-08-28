@@ -29,7 +29,6 @@ var userService=(()=>{
     }
     
     async function procedureList(value){
-        console.log(value,"service procedurelist")
         return new Promise((resolve,reject)=>{
             const pool=new sql.ConnectionPool(dbconfig).connect((error)=>{
                 if(error){
@@ -62,8 +61,7 @@ var userService=(()=>{
                 method: 'GET',
                 rejectUnauthorized: false,},
                function (error, response, body) {
-                    console.log(body,"body");
-                    resolve(body)
+                      resolve(body)
                })
         }) 
     }
