@@ -6,7 +6,6 @@ var app=express();
 
 app.use(cors());
 
-// const { connection ,request } =require('./connection/db.connection');
 app.use(bodyParser.json());
 
 const routes=require('./routes/appRoutes');

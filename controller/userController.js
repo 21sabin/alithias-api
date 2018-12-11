@@ -1,6 +1,7 @@
 const express=require('express');
 const router=require("express").Router();
-let userService=require("../service/userService");
+let UserService=require("../service/userService");
+const userService=new UserService();
 
 router.get("/",(req,res)=>{
     userService.userActivities().then(recordset=>{
