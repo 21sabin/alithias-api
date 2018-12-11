@@ -7,7 +7,7 @@ class MailService {
     sendMail(body) {
 
         const mailOptions = {
-            to: 'sabin@noveltytechnology.com',
+            to: 'support@alithias.com',
             from: 'support@alithias.com',
             subject: 'Alithias',
             html:template.emailTemplate( body )
