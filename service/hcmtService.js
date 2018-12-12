@@ -26,15 +26,15 @@ class HcmtService {
                 .input('Company', sql.VarChar, hcmt.Company )
                 .input('Network', sql.VarChar, hcmt.Network  )
                 .input('Username', sql.VarChar, hcmt.Username )
+                .input('Searchlocation', sql.VarChar, hcmt.Searchlocation )
                 .execute('dbo.Hcmdata')
 
         })
     }
 
-    getHcmtData( id ){
+    getHcmtData(){
         return pool1.then(connection => {
             return connection.request()
-                .input('id', sql.Int, id)
                 .execute('dbo.Hcmdata_get')
 
         })
@@ -42,5 +42,3 @@ class HcmtService {
 }
 
 module.exports = HcmtService;
-
- 

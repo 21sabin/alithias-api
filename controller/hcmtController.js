@@ -12,9 +12,8 @@ router.post('/',(request,response)=>{
     })
 })
 
-router.get('/:id',( request,response)=>{
-    let id = request.params.id;
-    hcmtService.getHcmtData( id ).then(hcmt=>{
+router.get('/',( request,response)=>{
+    hcmtService.getHcmtData().then(hcmt=>{
         utility.handleSuccess( hcmt.recordset , response);
     }).catch(error=>{
         utility.handleError( error, response );
