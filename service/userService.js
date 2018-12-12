@@ -1,5 +1,5 @@
 
-const { pool, sql } = require('./../connection/db.connection');
+const { pool1,pool2, sql } = require('./../connection/db.connection');
 const requestClient = require("request");
 
 class UserService {
@@ -21,14 +21,14 @@ class UserService {
     }
 
     userActivities() {
-        return pool.then(connection => {
+        return pool2.then(connection => {
             return connection.request().query("select ID,CompanyID,ProcedureID,UserID from UserActivity");
 
         })
     }
 
     procedureList(value) {
-        return pool.then(connection => {
+        return pool2.then(connection => {
             return connection.request()
                 .input('StartDate', sql.DateTime, new Date(value.StartDate))
                 .input('EndDate', sql.DateTime, new Date(value.EndDate))
