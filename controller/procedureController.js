@@ -1,4 +1,5 @@
-const userService = require('../service/userService');
+const UserService = require('../service/userService');
+const userService = new UserService();
 const router = require('express').Router();
 
 let procedureNames = [];
