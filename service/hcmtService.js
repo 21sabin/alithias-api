@@ -1,9 +1,9 @@
-const { pool, sql } = require('./../connection/db.connection');
+const { pool1, sql } = require('./../connection/db.connection');
 
 class HcmtService {
 
     createHcmt(hcmt) {
-        return pool.then(connection => {
+        return pool1.then(connection => {
             return connection.request()
                 .input('AlithiasCompanyId', sql.Int, hcmt.AlithiasCompanyId)
                 .input('AlithiasCompanyName', sql.VarChar, hcmt.AlithiasCompanyName)
@@ -32,7 +32,7 @@ class HcmtService {
     }
 
     getHcmtData( id ){
-        return pool.then(connection => {
+        return pool1.then(connection => {
             return connection.request()
                 .input('id', sql.Int, id)
                 .execute('dbo.Hcmdata_get')
