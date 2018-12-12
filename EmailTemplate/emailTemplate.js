@@ -38,31 +38,26 @@ const emailTemplate =  ( body )=>{
                 <td style="padding:8px;font-size:120%">${body.Procedure }</td>
             </tr>
             <tr>
-                <td style="font-weight:bold;padding:8px;font-size:120%;display:${hideTr(body.Company)}">Company</td>
-                <td style="padding:8px;font-size:120%">${body.Company ?body.Company :''}</td>
-            </tr>
-            <tr style="background-color:#f2f2f2;display:${hideTr(body.Network)}">
-                <td style="font-weight:bold;padding:8px;font-size:120%">Network</td>
-                <td style="padding:8px;font-size:120%">${body.Network ? body.Network:''}</td>
-            </tr>
-            <tr>
                 <td style="font-weight:bold;padding:8px;font-size:120%;">Radius</td>
                 <td style="padding:8px;font-size:120%">${body.Radius ?body.Radius :''}</td>
            </tr>
-            <tr style="background-color:#f2f2f2;display:${hideTr(body.Username)}">
-                <td style="font-weight:bold;padding:8px;font-size:120%">Username</td>
-                <td style="padding:8px;font-size:120%">${body.Username ? body.Username:''}</td>
+            <tr style="background-color:#f2f2f2;">
+                <td style="font-weight:bold;padding:8px;font-size:120%">Company</td>
+                <td style="padding:8px;font-size:120%">${body.Company ?body.Company :'-'}</td>
+            </tr>
+            <tr>
+                <td style="font-weight:bold;padding:8px;font-size:120%">Network</td>
+                <td style="padding:8px;font-size:120%">${body.Network ? body.Network:'-'}</td>
+            </tr>
+            <tr style="background-color:#f2f2f2;">
+                <td style="font-weight:bold;padding:8px;font-size:120%">MemberSearch</td>
+                <td style="padding:8px;font-size:120%">${body.Username ? body.Username:'-'}</td>
             </tr>
         </table>
     `;
 
     return html;
  
-}
-
-const hideTr = ( value )=>{
-    const style = value ? '':'none';
-    return style;
 }
 
 module.exports = { emailTemplate }
