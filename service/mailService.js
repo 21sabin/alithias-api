@@ -9,7 +9,7 @@ class MailService {
         const mailOptions = {
             to: 'support@alithias.com',
             from: 'support@alithias.com',
-            subject: 'Alithias',
+            subject: 'Alithias Support - Procedure Information Request',
             html:template.emailTemplate( body )
            
         }
