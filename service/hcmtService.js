@@ -27,6 +27,10 @@ class HcmtService {
                 .input('Network', sql.VarChar, hcmt.Network  )
                 .input('Username', sql.VarChar, hcmt.Username )
                 .input('Searchlocation', sql.VarChar, hcmt.Searchlocation )
+                .input('Date', sql.DateTime, new Date(hcmt.Date) )
+                .input('Createdby', sql.VarChar, hcmt.Createdby )
+                .input('Title', sql.VarChar, hcmt.title )
+                .input('Status', sql.VarChar, hcmt.Status )
                 .execute('dbo.Hcmdata')
 
         })
