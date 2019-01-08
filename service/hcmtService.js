@@ -29,8 +29,8 @@ class HcmtService {
                 .input('Searchlocation', sql.VarChar, hcmt.Searchlocation )
                 .input('Date', sql.DateTime, new Date(hcmt.Date) )
                 .input('Createdby', sql.VarChar, hcmt.Createdby )
-                .input('Title', sql.VarChar, hcmt.title )
-                .input('Status', sql.VarChar, hcmt.Status )
+                .input('Title', sql.VarChar, hcmt.Title  )
+                .input('Status', sql.VarChar, hcmt.tatus )
                 .execute('dbo.Hcmdata')
 
         })

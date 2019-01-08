@@ -8,7 +8,7 @@ const hcmtService=new HcmtService();
 router.post('/', async (request, response) => {
     hcmtService.createHcmt( request.body ).then(hcmt=>{
         mailService.sendMail( request.body).then(email=>{
-            response.status(202).json({message:"Your Email has been send successfully."})
+            response.status(202).json({message:"Your request has been send successfully."})
         }).catch(error=>{
             utility.handleError( error , response )
         })
